@@ -1,0 +1,92 @@
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+`torch_dtype` is deprecated! Use `dtype` instead!
+======================================================================
+EXP 0: DINOv2 Pixel Noise Control (CIFAR-10)
+======================================================================
+
+[1/5] Loading CIFAR-10 test set...
+  Loaded 200 images, shape=torch.Size([200, 3, 224, 224])
+
+[2/5] Loading DINOv2-small (CPU)...
+Loading weights:   0%|          | 0/223 [00:00<?, ?it/s]Loading weights:  39%|███▊      | 86/223 [00:00<00:00, 608.73it/s]Loading weights:  84%|████████▍ | 188/223 [00:00<00:00, 746.26it/s]Loading weights: 100%|██████████| 223/223 [00:00<00:00, 785.00it/s]
+  DINOv2 feature dim: 384
+
+[3/5] Loading CLIP (openai/clip-vit-base-patch32)...
+Loading weights:   0%|          | 0/398 [00:00<?, ?it/s]Loading weights: 100%|██████████| 398/398 [00:00<00:00, 16898.48it/s]
+[1mCLIPModel LOAD REPORT[0m from: openai/clip-vit-base-patch32
+Key                                  | Status     |  | 
+-------------------------------------+------------+--+-
+text_model.embeddings.position_ids   | UNEXPECTED |  | 
+vision_model.embeddings.position_ids | UNEXPECTED |  | 
+
+Notes:
+- UNEXPECTED:	can be ignored when loading from different task/architecture; not ok if you expect identical arch.
+  Batch CLIP self-similarity (expected ~1.0): 1.0000
+
+[4/5] Running pixel noise experiment (BATCHED)...
+
+  --- σ = 0 ---
+    DINOv2 L2: 0.0000 ± 0.0000
+    CLIP sim:  1.0000 ± 0.0000
+    Time: 85.1s
+
+  --- σ = 10 ---
+    DINOv2 L2: 0.5941 ± 0.3249
+    CLIP sim:  1.0000 ± 0.0000
+    Time: 81.0s
+
+  --- σ = 20 ---
+    DINOv2 L2: 2.1924 ± 0.9297
+    CLIP sim:  0.9999 ± 0.0001
+    Time: 80.8s
+
+  --- σ = 40 ---
+    DINOv2 L2: 9.2481 ± 2.5186
+    CLIP sim:  0.9978 ± 0.0014
+    Time: 80.7s
+
+  --- σ = 80 ---
+    DINOv2 L2: 17.1943 ± 3.1273
+    CLIP sim:  0.9753 ± 0.0097
+    Time: 84.2s
+
+  Total time: 411.7s (6.9 min)
+
+[5/5] Computing correlations...
+
+======================================================================
+RESULTS
+======================================================================
+
+n = 200 images × 5 σ levels = 1000 observations
+
+--- r(DINOv2_L2, pixel_noise_σ) ---
+  Pearson r = 0.952207
+  p-value   = 0.00e+00
+  95% CI   = [0.9333, 0.9712]
+
+--- r(CLIP_sim, pixel_noise_σ) ---
+  Pearson r = -0.834318
+  p-value   = 2.36e-260
+  95% CI   = [-0.8685, -0.8001]
+
+--- Per-σ summary (mean ± std) ---
+     σ |    DINOv2 L2 |   CLIP sim
+-----------------------------------
+     0 |       0.0000 ± 0.0000 |     1.0000 ± 0.0000
+    10 |       0.5941 ± 0.3249 |     1.0000 ± 0.0000
+    20 |       2.1924 ± 0.9297 |     0.9999 ± 0.0001
+    40 |       9.2481 ± 2.5186 |     0.9978 ± 0.0014
+    80 |      17.1943 ± 3.1273 |     0.9753 ± 0.0097
+
+--- Interpretation ---
+  ✓ DINOv2 L2 is SENSITIVE to pixel noise (r=0.952 > 0.5)
+  △ CLIP shows decreasing sensitivity to pixel noise (r=-0.834)
+
+--- Failure Check (Exp 0) ---
+  r(DINOv2_L2, σ) = 0.9522
+  PASS: DINOv2 L2 is a sensitive proxy for pixel perturbation magnitude.
+
+======================================================================
+EXP 0 COMPLETE — Verdict: PASS
+======================================================================
