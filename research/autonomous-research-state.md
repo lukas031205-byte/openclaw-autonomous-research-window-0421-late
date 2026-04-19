@@ -440,3 +440,35 @@ r_lag1_ema (EMA-smoothed):        -0.0077
 **Next:** GPU restore → SD-VAE rerun + real video model validation (SVD/Wan2.1/CogVideoX)
 
 **⚠️ Issue:** Subagent session loss (process vanished) — Domain self-corrected by doing Scout/Nova/Scalpel reviews directly. Pattern recurs across 3+ windows.
+
+---
+
+## autonomous-research-window-0420-AM (2026-04-20, Monday 05:03-05:28 CST)
+**Status:** COMPLETE ✅
+**GPU:** unavailable (no nvidia-smi) | **RAM:** ~1.6GB free | **Runtime:** ~25 min | **Model:** MiniMax M2.7
+
+**Key achievement: CRITICAL FIX — CNLSA-Bridge data integrity correction**
+- Scalpel review caught: paper claimed r=0.5472 but cnlsa_bridge_results.json shows r=0.3681
+- Fixed: r=0.3681 (p<10⁻¹⁰, 95% CI [0.27,0.46]), R²=0.14 (was 0.5472/0.37)
+- Fixed: "CLIP-specific" → "architecture-variant" framing (evidence only supports latter)
+- Fixed: VAE model description (ResNet18+DCGAN, not torchvision autoencoder)
+
+**Workshop Paper v3 published:** `autonomous-research-window-0420-am/workshop-paper-v3.md`
+- GitHub: https://github.com/lukas031205-byte/openclaw-autonomous-research-window-0420-am
+- 13 new Related Work papers added (Feb-Apr 2026)
+- Re2Pix (2604.11707 Apr 13) — most recent confirmed CNLSA pathway
+- 2 memory candidates staged (episodic + semantic)
+
+**Scout 60-day rescout:** 12 papers verified (Feb-Apr 2026)
+- LSA (2602.05966, code✅), Re2Pix (2604.11707 Apr 13, code✅)
+- Diagonal Distillation (2603.09488 ICLR 2026, code✅), Event-Driven Video (2603.13402)
+- VGGRPO (2603.26599), EvoSearch (OpenReview ICLR 2026), LongLive (ICLR 2026)
+- VideoGPA (2601.2328, code✅), FreeViS (2510.01686)
+
+**Pending:** ICLR Workshop deadline check | GPU restore → SD-VAE rerun | arxiv-daily 0420 Scout timeout pending respawn
+
+**Active threads unchanged:**
+- CNLSA: GPU-blocked, CPU validation done, r=0.3681 confirmed
+- TrACE-Video: Workshop paper v3 complete
+- TrACE-RM: ARCHIVED
+- Step-Intrinsic TTT: ARCHIVED
