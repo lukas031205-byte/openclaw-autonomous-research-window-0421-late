@@ -1,0 +1,334 @@
+{
+  "experiment": "Exp-Nova-8 v2 (CLIP-only, DINO OOM)",
+  "hypothesis": "H2: VAE roundtrip on natural images causes asymmetric CLIP semantic drift (\u0394CLIP_natural >> \u0394CLIP_synthetic)",
+  "vae_config": {
+    "epochs": 5,
+    "batch_size": 64,
+    "lr": 0.001,
+    "kl_weight": 0.01,
+    "latent_dim": 16
+  },
+  "natural_dataset": "CIFAR-10 test set, 25 images",
+  "synthetic_dataset": "VAE prior sampling (random z decode), 25 images",
+  "clip_model": "ViT-B/32",
+  "dinov2_status": "OOM killed - not available on this VM",
+  "natural_images": [
+    {
+      "idx": 0,
+      "clip_before": 0.232123,
+      "clip_after": 0.238173,
+      "delta_clip": -0.00605
+    },
+    {
+      "idx": 1,
+      "clip_before": 0.225432,
+      "clip_after": 0.232115,
+      "delta_clip": -0.006684
+    },
+    {
+      "idx": 2,
+      "clip_before": 0.23318,
+      "clip_after": 0.236519,
+      "delta_clip": -0.003339
+    },
+    {
+      "idx": 3,
+      "clip_before": 0.223488,
+      "clip_after": 0.236075,
+      "delta_clip": -0.012587
+    },
+    {
+      "idx": 4,
+      "clip_before": 0.222499,
+      "clip_after": 0.235258,
+      "delta_clip": -0.012759
+    },
+    {
+      "idx": 5,
+      "clip_before": 0.236961,
+      "clip_after": 0.232185,
+      "delta_clip": 0.004776
+    },
+    {
+      "idx": 6,
+      "clip_before": 0.22068,
+      "clip_after": 0.235399,
+      "delta_clip": -0.01472
+    },
+    {
+      "idx": 7,
+      "clip_before": 0.213211,
+      "clip_after": 0.237987,
+      "delta_clip": -0.024776
+    },
+    {
+      "idx": 8,
+      "clip_before": 0.226759,
+      "clip_after": 0.237758,
+      "delta_clip": -0.010999
+    },
+    {
+      "idx": 9,
+      "clip_before": 0.229156,
+      "clip_after": 0.231724,
+      "delta_clip": -0.002569
+    },
+    {
+      "idx": 10,
+      "clip_before": 0.22612,
+      "clip_after": 0.23499,
+      "delta_clip": -0.00887
+    },
+    {
+      "idx": 11,
+      "clip_before": 0.223052,
+      "clip_after": 0.235668,
+      "delta_clip": -0.012615
+    },
+    {
+      "idx": 12,
+      "clip_before": 0.237412,
+      "clip_after": 0.237757,
+      "delta_clip": -0.000345
+    },
+    {
+      "idx": 13,
+      "clip_before": 0.23019,
+      "clip_after": 0.234611,
+      "delta_clip": -0.004421
+    },
+    {
+      "idx": 14,
+      "clip_before": 0.226134,
+      "clip_after": 0.234815,
+      "delta_clip": -0.00868
+    },
+    {
+      "idx": 15,
+      "clip_before": 0.232193,
+      "clip_after": 0.233188,
+      "delta_clip": -0.000995
+    },
+    {
+      "idx": 16,
+      "clip_before": 0.225607,
+      "clip_after": 0.237638,
+      "delta_clip": -0.012031
+    },
+    {
+      "idx": 17,
+      "clip_before": 0.231565,
+      "clip_after": 0.228206,
+      "delta_clip": 0.003358
+    },
+    {
+      "idx": 18,
+      "clip_before": 0.230893,
+      "clip_after": 0.237616,
+      "delta_clip": -0.006722
+    },
+    {
+      "idx": 19,
+      "clip_before": 0.22776,
+      "clip_after": 0.234091,
+      "delta_clip": -0.006331
+    },
+    {
+      "idx": 20,
+      "clip_before": 0.227548,
+      "clip_after": 0.23149,
+      "delta_clip": -0.003942
+    },
+    {
+      "idx": 21,
+      "clip_before": 0.235663,
+      "clip_after": 0.238053,
+      "delta_clip": -0.002389
+    },
+    {
+      "idx": 22,
+      "clip_before": 0.243709,
+      "clip_after": 0.23596,
+      "delta_clip": 0.007749
+    },
+    {
+      "idx": 23,
+      "clip_before": 0.229805,
+      "clip_after": 0.237844,
+      "delta_clip": -0.008039
+    },
+    {
+      "idx": 24,
+      "clip_before": 0.228396,
+      "clip_after": 0.235729,
+      "delta_clip": -0.007333
+    }
+  ],
+  "synthetic_images": [
+    {
+      "idx": 0,
+      "clip_before": 0.227463,
+      "clip_after": 0.224141,
+      "delta_clip": 0.003322
+    },
+    {
+      "idx": 1,
+      "clip_before": 0.221933,
+      "clip_after": 0.22935,
+      "delta_clip": -0.007417
+    },
+    {
+      "idx": 2,
+      "clip_before": 0.227321,
+      "clip_after": 0.230164,
+      "delta_clip": -0.002843
+    },
+    {
+      "idx": 3,
+      "clip_before": 0.226219,
+      "clip_after": 0.226126,
+      "delta_clip": 9.2e-05
+    },
+    {
+      "idx": 4,
+      "clip_before": 0.224756,
+      "clip_after": 0.22354,
+      "delta_clip": 0.001216
+    },
+    {
+      "idx": 5,
+      "clip_before": 0.222167,
+      "clip_after": 0.230832,
+      "delta_clip": -0.008664
+    },
+    {
+      "idx": 6,
+      "clip_before": 0.223073,
+      "clip_after": 0.227788,
+      "delta_clip": -0.004715
+    },
+    {
+      "idx": 7,
+      "clip_before": 0.222274,
+      "clip_after": 0.221496,
+      "delta_clip": 0.000778
+    },
+    {
+      "idx": 8,
+      "clip_before": 0.226803,
+      "clip_after": 0.228802,
+      "delta_clip": -0.001999
+    },
+    {
+      "idx": 9,
+      "clip_before": 0.223997,
+      "clip_after": 0.219319,
+      "delta_clip": 0.004678
+    },
+    {
+      "idx": 10,
+      "clip_before": 0.222116,
+      "clip_after": 0.228164,
+      "delta_clip": -0.006048
+    },
+    {
+      "idx": 11,
+      "clip_before": 0.226744,
+      "clip_after": 0.223956,
+      "delta_clip": 0.002788
+    },
+    {
+      "idx": 12,
+      "clip_before": 0.226713,
+      "clip_after": 0.228588,
+      "delta_clip": -0.001875
+    },
+    {
+      "idx": 13,
+      "clip_before": 0.223418,
+      "clip_after": 0.232648,
+      "delta_clip": -0.00923
+    },
+    {
+      "idx": 14,
+      "clip_before": 0.222303,
+      "clip_after": 0.22517,
+      "delta_clip": -0.002867
+    },
+    {
+      "idx": 15,
+      "clip_before": 0.223155,
+      "clip_after": 0.225673,
+      "delta_clip": -0.002518
+    },
+    {
+      "idx": 16,
+      "clip_before": 0.218641,
+      "clip_after": 0.231846,
+      "delta_clip": -0.013205
+    },
+    {
+      "idx": 17,
+      "clip_before": 0.225237,
+      "clip_after": 0.23098,
+      "delta_clip": -0.005743
+    },
+    {
+      "idx": 18,
+      "clip_before": 0.218348,
+      "clip_after": 0.222882,
+      "delta_clip": -0.004534
+    },
+    {
+      "idx": 19,
+      "clip_before": 0.224292,
+      "clip_after": 0.228124,
+      "delta_clip": -0.003832
+    },
+    {
+      "idx": 20,
+      "clip_before": 0.226122,
+      "clip_after": 0.227788,
+      "delta_clip": -0.001666
+    },
+    {
+      "idx": 21,
+      "clip_before": 0.22226,
+      "clip_after": 0.229717,
+      "delta_clip": -0.007457
+    },
+    {
+      "idx": 22,
+      "clip_before": 0.218665,
+      "clip_after": 0.220221,
+      "delta_clip": -0.001556
+    },
+    {
+      "idx": 23,
+      "clip_before": 0.223801,
+      "clip_after": 0.231926,
+      "delta_clip": -0.008125
+    },
+    {
+      "idx": 24,
+      "clip_before": 0.220971,
+      "clip_after": 0.232826,
+      "delta_clip": -0.011855
+    }
+  ],
+  "summary": {
+    "n_natural": 25,
+    "n_synthetic": 25,
+    "total_time_seconds": 294.3,
+    "vae_training_time_seconds": 337.9,
+    "natural_delta_clip_mean": -0.006453,
+    "natural_delta_clip_std": 0.006719,
+    "natural_delta_clip_median": -0.006684,
+    "synthetic_delta_clip_mean": -0.003731,
+    "synthetic_delta_clip_std": 0.004512,
+    "synthetic_delta_clip_median": -0.002867,
+    "natural_vs_synthetic_ratio": 1.7296,
+    "h2_verdict": "PARTIALLY_SUPPORTED",
+    "h2_detail": "natural \u0394CLIP (-0.0065) > synthetic \u0394CLIP (-0.0037), ratio=1.73x \u2192 some asymmetry"
+  }
+}
