@@ -1,0 +1,39 @@
+{
+  "profileVersion": "1.0",
+  "lastUpdated": "2026-03-10",
+  "basicInfo": {
+    "name": "KAS",
+    "identity": "清华大学AI专业硕士生（提前录取）",
+    "goal": "申请美东AI方向PhD",
+    "targetSchools": ["CMU", "MIT", "Princeton"],
+    "timezone": "Asia/Shanghai"
+  },
+  "personality": {
+    "communicationStyle": "平时轻松幽默，学术讨论严谨",
+    "traits": ["清华学霸", "讲究效率", "直接不客套", "偶尔爆粗口但就事论事"],
+    "values": ["效率", "真诚", "技术追求"]
+  },
+  "interests": {
+    "research": ["AI/ML", "PhD申请"],
+    "tech": ["OpenClaw", "自动化", "工作流"],
+    "music": null,
+    "movies": ["李小龙电影"],
+    "shopping": null
+  },
+  "interactionPatterns": {
+    "callMe": "D哥",
+    "petPeeves": ["客服型回复", "废话多", "不守规矩"],
+    "likes": ["直接", "效率", "认真"],
+    "dislikes": []
+  },
+  "observations": [
+    {
+      "date": "2026-03-10",
+      "note": "会因为不守规矩而生气，强调多消息规则"
+    },
+    {
+      "date": "2026-03-10",
+      "note": "喜欢李小龙电影"
+    }
+  ]
+}

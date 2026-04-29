@@ -1,0 +1,29 @@
+{
+  "version": 1,
+  "skills": {
+    "openclaw-tavily-search": {
+      "version": "0.1.0",
+      "installedAt": 1773858394265
+    },
+    "skill-vetter": {
+      "version": "1.0.0",
+      "installedAt": 1773246991147
+    },
+    "self-improving-agent": {
+      "version": "3.0.1",
+      "installedAt": 1773247203576
+    },
+    "agent-browser": {
+      "version": "0.2.0",
+      "installedAt": 1773247823437
+    },
+    "github": {
+      "version": "1.0.0",
+      "installedAt": 1773247828304
+    },
+    "feishu-doc-manager": {
+      "version": "1.0.0",
+      "installedAt": 1775240241860
+    }
+  }
+}
